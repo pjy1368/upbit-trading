@@ -20,7 +20,7 @@ allprojects {
         plugin("com.diffplug.spotless")
     }
 
-    kotlin { jvmToolchain { languageVersion.set(JavaLanguageVersion.of(21)) } }
+    kotlin { jvmToolchain { languageVersion.set(JavaLanguageVersion.of(17)) } }
 
     dependencies {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -59,7 +59,7 @@ tasks {
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "19"
+            jvmTarget = "17"
         }
     }
 

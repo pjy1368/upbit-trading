@@ -1,0 +1,8 @@
+spring:
+  r2dbc:
+    postgresql:
+      username: ${CONF_UPBIT_DB_USERNAME:postgres}
+      password: ${CONF_UPBIT_DB_PASSWORD:postgres}
+      host: ${CONF_UPBIT_DB_HOST:localhost}
+      port: ${CONF_UPBIT_DB_PORT:5342}
+      name: ${CONF_UPBIT_DB_DATABASE:upbit}
