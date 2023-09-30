@@ -26,6 +26,7 @@ sourceSets {
 dependencies {
     implementation(project(":domain"))
 
+    /* database */
     implementation("org.postgresql:r2dbc-postgresql")
     implementation("io.r2dbc:r2dbc-pool")
     implementation("org.postgresql:postgresql")
@@ -34,6 +35,22 @@ dependencies {
     implementation("org.jooq:jooq-kotlin:3.18.0")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     jooqGenerator("org.postgresql:postgresql")
+
+    /* test fixtures */
+    testImplementation(testFixtures(project(":domain")))
+    testFixturesImplementation("io.github.microutils:kotlin-logging-jvm")
+
+    testFixturesImplementation("org.testcontainers:testcontainers")
+    testFixturesImplementation("org.testcontainers:r2dbc")
+    testFixturesImplementation("org.testcontainers:postgresql")
+    testFixturesImplementation("org.testcontainers:junit-jupiter")
+
+    testFixturesImplementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+    testFixturesImplementation("org.postgresql:r2dbc-postgresql")
+    testFixturesImplementation("org.postgresql:postgresql")
+    testFixturesImplementation("org.jooq:jooq:3.18.0")
+    testFixturesImplementation("org.jooq:jooq-kotlin-coroutines:3.18.0")
+    testFixturesImplementation("org.jooq:jooq-kotlin:3.18.0")
 }
 
 jooq {
